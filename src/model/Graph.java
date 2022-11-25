@@ -1,16 +1,17 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Queue;
 
-public interface Graph<E> {
-    void insertVertex(E x);
+public interface Graph <E>{
 
-    void insertArist(int vi, int vf);
-    int order();
-    ArrayList<E> sucesors(int position);
-    String show();
+    void clearVisited();
 
-    E getVertex(int position);
+    boolean BFS(E origin, E goal);
 
-    boolean conexMethod();
+
+    HashMap<E, Node> getNodes();
+
+    ArrayList<Edge> getEdges();
 }

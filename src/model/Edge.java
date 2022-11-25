@@ -1,41 +1,43 @@
 package model;
 
 class Edge implements Comparable<Edge> {
-    private Node origin;
-    private Node destination;
-    private double weight;
+    private int _origin;
+    private int _destination;
 
-    public Edge(Node origin, Node destination, double weight) {
-        this.origin = origin;
-        this.destination = destination;
-        this.weight = weight;
+    private double _weight;
+
+    public Edge(int origin, int destination, double weight) {
+        this._origin = origin;
+        this._destination = destination;
+        this._weight = weight;
     }
 
-    public Node getX() {
-        return this.origin;
+    public int get_origin() {
+        return _origin;
     }
 
-    public Node getY() {
-        return this.destination;
+    public int get_destination() {
+        return _destination;
     }
 
-    public double getW() {
-        return this.weight;
+    public double get_weight() {
+        return _weight;
     }
 
     public int compareTo(Edge b) {
-        if (this.weight < b.weight) {
+        if (this._weight < b._weight) {
             return -1;
-        } else if (this.weight > b.weight) {
+        } else if (this._weight > b._weight) {
             return 1;
         } else {
-            if (this.origin.getId() + this.destination.getId() + this.weight < b.origin.getId() + b.destination.getId() + b.weight) {
+            if (this._origin + this._destination + this._weight < b._origin + b._destination + b._weight) {
                 return -1;
-            } else if (this.origin.getId() + this.destination.getId() + this.weight > b.origin.getId() + b.destination.getId() + b.weight) {
+            } else if (this._origin + this._destination + this._weight > b._origin + b._destination + b._weight) {
                 return 1;
             }
         }
         return 0;
     }
+
 }
 

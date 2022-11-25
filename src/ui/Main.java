@@ -76,6 +76,9 @@ public class Main {
                 break;
 
             case "5":
+
+                System.out.println(control.Kruskal());
+
                 break;
 
             case "6":

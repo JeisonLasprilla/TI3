@@ -5,10 +5,9 @@ import java.util.HashSet;
 class Node {
     private int id;
     private boolean visited;
-    private HashSet<Integer> members; // Adjacency list
+    private HashSet<Integer> members = new HashSet<Integer>();; // Adjacency list
 
     Node(int id, boolean visited) {
-        members = new HashSet<Integer>();
         this.id = id;
         this.visited = visited;
         this.members.add(this.id);
@@ -23,19 +22,20 @@ class Node {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setMembers(HashSet<Integer> m) {
-        this.members = m;
-    }
 
     public HashSet<Integer> getMembers() {
         return this.members;
+    }
+
+    public void setMembers(HashSet<Integer> members) {
+        this.members = members;
     }
 
     public boolean hasMember(Integer id) {
