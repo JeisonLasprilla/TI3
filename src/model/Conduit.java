@@ -1,12 +1,12 @@
 package model;
 
-class Edge implements Comparable<Edge> {
+class Conduit implements Comparable<Conduit> {
     private int _origin;
     private int _destination;
 
     private double _weight;
 
-    public Edge(int origin, int destination, double weight) {
+    public Conduit(int origin, int destination, double weight) {
         this._origin = origin;
         this._destination = destination;
         this._weight = weight;
@@ -24,7 +24,7 @@ class Edge implements Comparable<Edge> {
         return _weight;
     }
 
-    public int compareTo(Edge b) {
+    public int compareTo(Conduit b) {
         if (this._weight < b._weight) {
             return -1;
         } else if (this._weight > b._weight) {

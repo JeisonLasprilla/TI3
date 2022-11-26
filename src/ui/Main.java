@@ -1,17 +1,17 @@
 package ui;
 
-import model.Control;
+import model.SewersController;
 
 import java.util.Scanner;
 
 public class Main {
 
     private static Scanner sc;
-    private Control control;
+    private SewersController sewersController;
 
     public Main() {
         sc = new Scanner(System.in);
-        control = new Control();
+        sewersController = new SewersController();
     }
 
     public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class Main {
         switch (number) {
             case "1":
 
-                System.out.println(control.createGraph());
+                System.out.println(sewersController.createGraph());
                 break;
 
             case "2":
@@ -44,7 +44,7 @@ public class Main {
                 System.out.println("Vertex ID");
                 int key = sc.nextInt();
 
-                System.out.println(control.addVertex(key));
+                System.out.println(sewersController.addVertex(key));
 
                 break;
 
@@ -59,7 +59,7 @@ public class Main {
                 System.out.println("Edge weight");
                 double weight = sc.nextInt();
 
-                System.out.println(control.addEdge(from, to, weight));
+                System.out.println(sewersController.addEdge(from, to, weight));
 
                 break;
 
@@ -71,17 +71,23 @@ public class Main {
                 System.out.println("Destination vertex");
                 int destination = sc.nextInt();
 
-                System.out.println(control.BFS(origin, destination));
+                System.out.println(sewersController.BFS(origin, destination));
 
                 break;
 
             case "5":
 
-                System.out.println(control.Kruskal());
+                System.out.println(sewersController.Kruskal());
 
                 break;
 
             case "6":
+
+                System.out.println("Where do you wanna start?");
+                int start = sc.nextInt();
+
+                System.out.println(sewersController.dijsktra(start));
+
                 break;
 
             case "0":

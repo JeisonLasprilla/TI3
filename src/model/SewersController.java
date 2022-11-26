@@ -1,17 +1,15 @@
 package model;
 
-import java.util.ArrayList;
+public class SewersController {
 
-public class Control {
+    private CityGraph graph;
 
-    private MyGraph graph;
-
-    public Control() {
-        graph = new MyGraph();
+    public SewersController() {
+        graph = new CityGraph();
     }
 
     public String createGraph(){
-        graph = new MyGraph();
+        graph = new CityGraph();
 
 //        //Add vertices
 //        graph.getNodes().put(1 ,new Node(1, false)); //u
@@ -33,38 +31,39 @@ public class Control {
 //        graph.getNodes().get(4).getMembers().add(graph.getNodes().get(5).getId());
 
         //Add vertices
-        graph.getNodes().put(1 ,new Node(1, false));
-        graph.getNodes().put(2, new Node(2, false));
-        graph.getNodes().put(3, new Node(3, false));
-        graph.getNodes().put(4, new Node(4, false));
-        graph.getNodes().put(5, new Node(5, false));
-        graph.getNodes().put(6, new Node(6, false));
-        graph.getNodes().put(7, new Node(7, false));
+        graph.getNodes().put(1 ,new Sewer(1));
+        graph.getNodes().put(2, new Sewer(2));
+        graph.getNodes().put(3, new Sewer(3));
+        graph.getNodes().put(4, new Sewer(4));
+        graph.getNodes().put(5, new Sewer(5));
+        graph.getNodes().put(6, new Sewer(6));
+        graph.getNodes().put(7, new Sewer(7));
+
 
         //Add Edges
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(2).getId(), 5));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(3).getId(), 1));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(4).getId(), 3));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(6).getId(), 5));
+        addEdge(1,2,5);
+        addEdge(1,3,1);
+        addEdge(1,4,3);
+        addEdge(1,6,5);
 
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(2).getId(), graph.getNodes().get(7).getId(), 4));
+        addEdge(2,7,4);
 
+        addEdge(3,5,4);
+        addEdge(3,7,8);
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(5).getId(), 4));
-        graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(7).getId(), 8));
+        addEdge(4,6,9);
 
+        addEdge(5,6,6);
+        addEdge(5,7,2);
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(4).getId(), graph.getNodes().get(6).getId(), 9));
-
-
-        graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(6).getId(), 6));
-        graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(7).getId(), 2));
-
-
-        graph.getEdges().add(new Edge(graph.getNodes().get(6).getId(), graph.getNodes().get(7).getId(), 7));
+        addEdge(6,7,7);
 
         return "\nSuccessfully created graph";
+    }
+
+    public String dijsktra(int start){
+        return graph.dijsktra(start);
     }
 
     public String addVertex(int id){
@@ -72,7 +71,7 @@ public class Control {
         if(graph.getNodes().containsKey(id)){
             return "\nThe vertex already exists";
         }else{
-            graph.getNodes().put(id, new Node(id, false));
+            graph.getNodes().put(id, new Sewer(id));
             return "\nVertex added";
         }
     }
@@ -95,12 +94,17 @@ public class Control {
 
         String out = "";
         if(verifyVertex(from, to).equals("")){
-            //Add to edges array
-            graph.getEdges().add(new Edge(graph.getNodes().get(from).getId(), graph.getNodes().get(to).getId(), weight));
+            //Add to edges arr
+            Conduit temp = new Conduit(graph.getNodes().get(from).getId(), graph.getNodes().get(to).getId(), weight);
+            graph.getEdges().add(temp);
 
             //Add to adjacency list
             graph.getNodes().get(from).getMembers().add(to);
             graph.getNodes().get(to).getMembers().add(from);
+
+            //Add to edges
+            graph.getNodes().get(from).getEdges().add(temp);
+            graph.getNodes().get(to).getEdges().add(temp);
 
             out = "\nSuccessfully created Edge";
         }
@@ -118,7 +122,7 @@ public class Control {
     }
 
     public String Kruskal(){
-        return String.valueOf(graph.kruskal());
+        return graph.kruskal();
     }
 
 }
