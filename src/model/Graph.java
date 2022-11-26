@@ -2,16 +2,19 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Queue;
 
 public interface Graph <E>{
 
     void clearVisited();
 
+    String dijsktra(int startingPoint);
+
+    String kruskal();
+
     boolean BFS(E origin, E goal);
 
 
-    HashMap<E, Node> getNodes();
+    HashMap<E, Sewer> getNodes();
 
-    ArrayList<Edge> getEdges();
+    ArrayList<Conduit> getEdges();
 }

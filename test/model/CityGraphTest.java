@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MyGraphTest {
-    MyGraph graph = new MyGraph();
+class CityGraphTest {
+    CityGraph graph = new CityGraph();
 
     public void case0(int x) {
         for (int i=0; i<=x; i++){
-            graph.getNodes().put(i ,new Node(i, false));
+            graph.getNodes().put(i ,new Sewer(i));
         }
     }
 
