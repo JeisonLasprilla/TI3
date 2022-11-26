@@ -21,17 +21,13 @@ public class CityGraph implements Graph {
 
     @Override
     public String dijsktra(int startingPoint){
-
         nodes.get(startingPoint).setMinDistance(0);
         PriorityQueue<Sewer> queue = new PriorityQueue<Sewer>();
         queue.add(nodes.get(startingPoint));
 
         while(!queue.isEmpty()){
-
             Sewer current = queue.poll();
-
             for(Conduit neighbour: current.getEdges()){
-
                 int newDist = (int) (current.getMinDistance()+neighbour.get_weight());
 
                 if(nodes.get(neighbour.get_destination()).getMinDistance() > newDist){
@@ -48,12 +44,10 @@ public class CityGraph implements Graph {
                 }
             }
         }
-
         StringBuilder out = new StringBuilder();
         for (Map.Entry<Integer, Sewer> entry : nodes.entrySet()) {
             out.append("\n"+entry.getValue().getPath().toString());
         }
-
         return String.valueOf(out);
     }
 

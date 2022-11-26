@@ -68,22 +68,22 @@ class CityGraphTest {
     public void case4(){
         case0(7);
         //Add Edges
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(2).getId(), 5));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(3).getId(), 1));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(4).getId(), 3));
-        graph.getEdges().add(new Edge(graph.getNodes().get(1).getId(), graph.getNodes().get(6).getId(), 5));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(1).getId(), graph.getNodes().get(2).getId(), 5));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(1).getId(), graph.getNodes().get(3).getId(), 1));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(1).getId(), graph.getNodes().get(4).getId(), 3));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(1).getId(), graph.getNodes().get(6).getId(), 5));
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(2).getId(), graph.getNodes().get(7).getId(), 4));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(2).getId(), graph.getNodes().get(7).getId(), 4));
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(5).getId(), 4));
-        graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(7).getId(), 8));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(3).getId(), graph.getNodes().get(5).getId(), 4));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(3).getId(), graph.getNodes().get(7).getId(), 8));
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(4).getId(), graph.getNodes().get(6).getId(), 9));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(4).getId(), graph.getNodes().get(6).getId(), 9));
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(6).getId(), 6));
-        graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(7).getId(), 2));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(5).getId(), graph.getNodes().get(6).getId(), 6));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(5).getId(), graph.getNodes().get(7).getId(), 2));
 
-        graph.getEdges().add(new Edge(graph.getNodes().get(6).getId(), graph.getNodes().get(7).getId(), 7));
+        graph.getEdges().add(new Conduit(graph.getNodes().get(6).getId(), graph.getNodes().get(7).getId(), 7));
     }
 
     @Test
