@@ -1,6 +1,6 @@
-# Integrantes
-Jeison Lasprilla
-Santiago Prado
-Juan Diego Lora
+## Cali's Sewer Problem<br>
 
-# Cali's Sewer Problem
+## Integrantes
+* Jeison Lasprilla<br>
+* Santiago Prado<br>
+* Juan Diego Lora<br>
