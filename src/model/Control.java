@@ -26,11 +26,6 @@ public class Control {
 //        graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(4).getId(), 5));
 //        graph.getEdges().add(new Edge(graph.getNodes().get(4).getId(), graph.getNodes().get(5).getId(), 10));
 //
-//        //Add adajacency list()
-//        graph.getNodes().get(1).getMembers().add(graph.getNodes().get(2).getId());
-//        graph.getNodes().get(2).getMembers().add(graph.getNodes().get(3).getId());
-//        graph.getNodes().get(3).getMembers().add(graph.getNodes().get(4).getId());
-//        graph.getNodes().get(4).getMembers().add(graph.getNodes().get(5).getId());
 
         //Add vertices
         graph.getNodes().put(1 ,new Node(1, false));
@@ -50,13 +45,10 @@ public class Control {
 
         graph.getEdges().add(new Edge(graph.getNodes().get(2).getId(), graph.getNodes().get(7).getId(), 4));
 
-
         graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(5).getId(), 4));
         graph.getEdges().add(new Edge(graph.getNodes().get(3).getId(), graph.getNodes().get(7).getId(), 8));
 
-
         graph.getEdges().add(new Edge(graph.getNodes().get(4).getId(), graph.getNodes().get(6).getId(), 9));
-
 
         graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(6).getId(), 6));
         graph.getEdges().add(new Edge(graph.getNodes().get(5).getId(), graph.getNodes().get(7).getId(), 2));
@@ -64,6 +56,31 @@ public class Control {
 
         graph.getEdges().add(new Edge(graph.getNodes().get(6).getId(), graph.getNodes().get(7).getId(), 7));
 
+        //Add adajacency list()
+        /*graph.getNodes().get(1).getMembers().add(graph.getNodes().get(2).getId());
+        graph.getNodes().get(1).getMembers().add(graph.getNodes().get(3).getId());
+        graph.getNodes().get(1).getMembers().add(graph.getNodes().get(4).getId());
+        graph.getNodes().get(1).getMembers().add(graph.getNodes().get(6).getId());
+
+        graph.getNodes().get(2).getMembers().add(graph.getNodes().get(1).getId());
+        graph.getNodes().get(2).getMembers().add(graph.getNodes().get(7).getId());
+
+        graph.getNodes().get(3).getMembers().add(graph.getNodes().get(1).getId());
+        graph.getNodes().get(3).getMembers().add(graph.getNodes().get(5).getId());
+        graph.getNodes().get(3).getMembers().add(graph.getNodes().get(7).getId());
+
+        graph.getNodes().get(4).getMembers().add(graph.getNodes().get(1).getId());
+        graph.getNodes().get(4).getMembers().add(graph.getNodes().get(6).getId());
+
+        graph.getNodes().get(5).getMembers().add(graph.getNodes().get(3).getId());
+        graph.getNodes().get(5).getMembers().add(graph.getNodes().get(6).getId());
+        graph.getNodes().get(5).getMembers().add(graph.getNodes().get(7).getId());
+
+
+        graph.getNodes().get(6).getMembers().add(graph.getNodes().get(1).getId());
+        graph.getNodes().get(6).getMembers().add(graph.getNodes().get(4).getId());
+        graph.getNodes().get(6).getMembers().add(graph.getNodes().get(5).getId());
+        graph.getNodes().get(6).getMembers().add(graph.getNodes().get(7).getId());*/
         return "\nSuccessfully created graph";
     }
 
@@ -118,7 +135,7 @@ public class Control {
     }
 
     public String Kruskal(){
-        return String.valueOf(graph.kruskal());
+        return graph.kruskal();
     }
 
 }

@@ -18,7 +18,7 @@ public class MyGraph implements Graph {
         }
     }
 
-    public StringBuilder kruskal(){
+    public String kruskal(){
 
         clearVisited();
 
@@ -75,7 +75,7 @@ public class MyGraph implements Graph {
 
         print.append("\nTotal weight: "+sum+"\n");
 
-        return print;
+        return print.toString();
     }
 
     @Override
